@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student List</title>
+    <style>
+        .html {
+            background-color: antiquewhite;
+            border: solid green 1em;
+        }
+    .header {
+        color: white;
+        font-family: verdana;
+        font-size: 90%;
+        background-color: green;
+        text-align: center;
+        background-image: url(logo.png);
+        background-repeat: no-repeat;
+        background-position: center 
+        100px;
+        background-attachment: fixed;
+      }
+      p {
+        color: rgb(20, 19, 19);
+        font-family: courier;
+        font-size: 100%;
+      }
+      </style>
+</head>
+<body>
+    <div class="header">  
+    <h1>ZUNTU COMMUNITY NUSERY AND PRIMARY SCHOOL</h1>
+    <h4>Motto: Education is the Best Legacy</h4>
+    </div>
+    <h2>Student List</h2>
+    <ol>
+        {% for student in students %}
+            <li><h2>{{ student.first_name }} {{ student.last_name }}</h2>
+                {{ student.student_class }}<br>
+                {{ student.date_of_birth }}<br>
+                {{ student.gender}}<br>
+                {{ student.address}}<br>
+            
+            </li>
+        {% endfor %}
+    </ol>
+    <p><a href="{% url 'enroll_student' %}">Enroll a New Student</a></p>
+</body>
+</html>

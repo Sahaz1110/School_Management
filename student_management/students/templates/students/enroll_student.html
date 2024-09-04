@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" class="html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enroll Student</title>
+    <style>
+        .html {
+            background-color: antiquewhite;
+            border: solid green 1em;
+        }
+    .header {
+        color: white;
+        font-family: verdana;
+        font-size: 90%;
+        background-color: green;
+        text-align: center;
+        background-image: url(logo.png);
+        background-repeat: no-repeat;
+        background-position: center 
+        100px;
+        background-attachment: fixed;
+      }
+      p {
+        color: rgb(20, 19, 19);
+        font-family: courier;
+        font-size: 100%;
+      }
+      </style>
+</head>
+<body>
+    <div class="header">  
+    <h1>ZUNTU COMMUNITY NUSERY AND PRIMARY SCHOOL</h1>
+    <h4>Motto: Education is the Best Legacy</h4>
+    </div>
+    <h1>Enroll New Student</h1>
+    
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Enroll Student</button>
+    </form>
+
+    <p><a href="{% url 'student_list' %}">Back to Student List</a></p>
+</body>
+</html>
